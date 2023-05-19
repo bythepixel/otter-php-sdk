@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **fulfillment_mode** | **string** | How an order is expected to be fulfilled. | [optional] [default to 'DELIVERY']
 **scheduling_type** | **string** | Describes whether this order should be cooked as soon as possible, or some time in the future. Please use the pickupTime and/or deliveryTime to indicate when. If no scheduling type is provided, we assume the order should be prepared as soon as possible. | [optional]
 **courier_status** | **string** | The status of the courier. | [optional]
+**table_identifier** | **string** | The table identification for dine-in orders. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

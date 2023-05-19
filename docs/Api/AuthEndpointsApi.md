@@ -1,10 +1,10 @@
 # OpenAPI\Client\AuthEndpointsApi
 
-All URIs are relative to https://}.
+All URIs are relative to https://}, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**requestToken()**](AuthEndpointsApi.md#requestToken) | **POST** /v1/auth/token | Generate token
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**requestToken()**](AuthEndpointsApi.md#requestToken) | **POST** /v1/auth/token | Generate token |
 
 
 ## `requestToken()`
@@ -45,12 +45,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **grant_type** | **string**| The OAuth2.0 grant types supported. |
- **scope** | **string**| The scope to request, multiple scopes are passed delimited by a space character. |
- **client_id** | **string**| The ID of the client (also known as the Application ID). | [optional]
- **client_secret** | **string**| The secret of the client. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grant_type** | **string**| The OAuth2.0 grant types supported. | |
+| **scope** | **string**| The scope to request, multiple scopes are passed delimited by a space character. | |
+| **client_id** | **string**| The ID of the client (also known as the Application ID). | [optional] |
+| **client_secret** | **string**| The secret of the client. | [optional] |
 
 ### Return type
 
