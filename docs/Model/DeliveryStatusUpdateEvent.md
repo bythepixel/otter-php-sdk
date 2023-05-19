@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **status** | [**\OpenAPI\Client\Model\DeliveryStatus**](DeliveryStatus.md) |  | [optional]
 **delivery_status** | [**\OpenAPI\Client\Model\DeliveryStatus**](DeliveryStatus.md) |  | [optional]
 **currency_code** | **string** | The 3-letter currency code (ISO 4217) to use for all monetary values. | [optional]
-**base_fee** | **double** |  | [optional]
-**extra_fee** | **double** |  | [optional]
-**total_fee** | **double** |  | [optional]
+**base_fee** | **float** |  | [optional]
+**extra_fee** | **float** |  | [optional]
+**total_fee** | **float** |  | [optional]
 **distance** | [**\OpenAPI\Client\Model\Distance**](Distance.md) |  | [optional]
 **updated_time** | **\DateTime** | The time that the delivery status was updated. | [optional]
 

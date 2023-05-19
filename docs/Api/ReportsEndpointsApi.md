@@ -1,19 +1,20 @@
 # OpenAPI\Client\ReportsEndpointsApi
 
-All URIs are relative to https://}.
+All URIs are relative to https://}, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**generateReport()**](ReportsEndpointsApi.md#generateReport) | **POST** /v1/reports | Request a business report for a store
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**generateReportMulti()**](ReportsEndpointsApi.md#generateReportMulti) | **POST** /v1/reports/generate | Request a business report for multiple stores |
+| [**getReportStatus()**](ReportsEndpointsApi.md#getReportStatus) | **GET** /v1/reports/{jobId} | Request status of the report using jobId |
 
 
-## `generateReport()`
+## `generateReportMulti()`
 
 ```php
-generateReport($x_application_id, $x_store_id, $generate_report_request): \OpenAPI\Client\Model\GenerateReportResponse
+generateReportMulti($generate_report_multi_request): \OpenAPI\Client\Model\GenerateReportResponse
 ```
 
-Request a business report for a store
+Request a business report for multiple stores
 
 ### Example
 
@@ -32,25 +33,21 @@ $apiInstance = new OpenAPI\Client\Api\ReportsEndpointsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$x_application_id = 'x_application_id_example'; // string
-$x_store_id = 'x_store_id_example'; // string
-$generate_report_request = new \OpenAPI\Client\Model\GenerateReportRequest(); // \OpenAPI\Client\Model\GenerateReportRequest
+$generate_report_multi_request = new \OpenAPI\Client\Model\GenerateReportMultiRequest(); // \OpenAPI\Client\Model\GenerateReportMultiRequest
 
 try {
-    $result = $apiInstance->generateReport($x_application_id, $x_store_id, $generate_report_request);
+    $result = $apiInstance->generateReportMulti($generate_report_multi_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ReportsEndpointsApi->generateReport: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ReportsEndpointsApi->generateReportMulti: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_application_id** | **string**|  |
- **x_store_id** | **string**|  |
- **generate_report_request** | [**\OpenAPI\Client\Model\GenerateReportRequest**](../Model/GenerateReportRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_report_multi_request** | [**\OpenAPI\Client\Model\GenerateReportMultiRequest**](../Model/GenerateReportMultiRequest.md)|  | |
 
 ### Return type
 
@@ -63,6 +60,66 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getReportStatus()`
+
+```php
+getReportStatus($job_id): \OpenAPI\Client\Model\GetReportStatusResponse
+```
+
+Request status of the report using jobId
+
+`RATE LIMIT: 2 per minute`
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2.0
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ReportsEndpointsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$job_id = 'job_id_example'; // string
+
+try {
+    $result = $apiInstance->getReportStatus($job_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportsEndpointsApi->getReportStatus: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **job_id** | **string**|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetReportStatusResponse**](../Model/GetReportStatusResponse.md)
+
+### Authorization
+
+[OAuth2.0](../../README.md#OAuth2.0)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

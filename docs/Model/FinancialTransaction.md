@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **type** | **string** | Financial transaction operation type. |
 **payout** | [**\OpenAPI\Client\Model\PayoutInfo**](PayoutInfo.md) |  | [optional]
 **order_items** | [**\OpenAPI\Client\Model\OrderItemInformation[]**](OrderItemInformation.md) | Detailed financial per order item. | [optional]
+**issues** | [**\OpenAPI\Client\Model\OrderIssue[]**](OrderIssue.md) | List of issues that might have happened with the order. | [optional]
 **data** | [**\OpenAPI\Client\Model\FinancialData**](FinancialData.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

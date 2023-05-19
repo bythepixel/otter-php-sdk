@@ -1,16 +1,16 @@
 # OpenAPI\Client\PingEndpointsApi
 
-All URIs are relative to https://}.
+All URIs are relative to https://}, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ping()**](PingEndpointsApi.md#ping) | **GET** /v1/ping | Ping the system
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ping()**](PingEndpointsApi.md#ping) | **GET** /v1/ping | Ping the system |
 
 
 ## `ping()`
 
 ```php
-ping($x_application_id, $x_store_id, $x_echo_error): \OpenAPI\Client\Model\PongObject
+ping($x_store_id, $x_echo_error): \OpenAPI\Client\Model\PongObject
 ```
 
 Ping the system
@@ -34,12 +34,11 @@ $apiInstance = new OpenAPI\Client\Api\PingEndpointsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$x_application_id = 'x_application_id_example'; // string
 $x_store_id = 'x_store_id_example'; // string
 $x_echo_error = ping test error message; // string
 
 try {
-    $result = $apiInstance->ping($x_application_id, $x_store_id, $x_echo_error);
+    $result = $apiInstance->ping($x_store_id, $x_echo_error);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PingEndpointsApi->ping: ', $e->getMessage(), PHP_EOL;
@@ -48,11 +47,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_application_id** | **string**|  |
- **x_store_id** | **string**|  |
- **x_echo_error** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **x_store_id** | **string**|  | |
+| **x_echo_error** | **string**|  | [optional] |
 
 ### Return type
 
