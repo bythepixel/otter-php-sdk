@@ -1,16 +1,16 @@
 # OpenAPI\Client\CallbackEndpointsApi
 
-All URIs are relative to https://}.
+All URIs are relative to https://}, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**publishError()**](CallbackEndpointsApi.md#publishError) | **POST** /v1/callback/error | Publish callback error
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**publishError()**](CallbackEndpointsApi.md#publishError) | **POST** /v1/callback/error | Publish callback error |
 
 
 ## `publishError()`
 
 ```php
-publishError($x_application_id, $x_store_id, $x_event_id, $event_callback_error)
+publishError($x_store_id, $x_event_id, $event_callback_error)
 ```
 
 Publish callback error
@@ -34,13 +34,12 @@ $apiInstance = new OpenAPI\Client\Api\CallbackEndpointsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$x_application_id = 'x_application_id_example'; // string
 $x_store_id = 'x_store_id_example'; // string
 $x_event_id = cf0ce51b-d74e-40d3-b177-1925ab4edc0c; // string
 $event_callback_error = new \OpenAPI\Client\Model\EventCallbackError(); // \OpenAPI\Client\Model\EventCallbackError
 
 try {
-    $apiInstance->publishError($x_application_id, $x_store_id, $x_event_id, $event_callback_error);
+    $apiInstance->publishError($x_store_id, $x_event_id, $event_callback_error);
 } catch (Exception $e) {
     echo 'Exception when calling CallbackEndpointsApi->publishError: ', $e->getMessage(), PHP_EOL;
 }
@@ -48,12 +47,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_application_id** | **string**|  |
- **x_store_id** | **string**|  |
- **x_event_id** | **string**|  |
- **event_callback_error** | [**\OpenAPI\Client\Model\EventCallbackError**](../Model/EventCallbackError.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **x_store_id** | **string**|  | |
+| **x_event_id** | **string**|  | |
+| **event_callback_error** | [**\OpenAPI\Client\Model\EventCallbackError**](../Model/EventCallbackError.md)|  | |
 
 ### Return type
 
